@@ -1,8 +1,8 @@
-using DictaSanctorum.Models;
+using Dicta_Sanctorum.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace DictaSanctorum.Controllers
+namespace Dicta_Sanctorum.Controllers
 {
     public class HomeController : Controller
     {

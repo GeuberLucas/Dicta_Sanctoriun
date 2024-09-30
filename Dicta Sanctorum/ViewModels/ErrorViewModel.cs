@@ -1,4 +1,4 @@
-namespace DictaSanctorum.Models
+namespace Dicta_Sanctorum.ViewModels
 {
     public class ErrorViewModel
     {
