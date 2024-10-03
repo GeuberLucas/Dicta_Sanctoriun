@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dicta Sanctorum", "Dicta Sanctorum\Dicta Sanctorum.csproj", "{062F2B1E-4CB2-47AA-8EA9-417BF914621B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dicta_Sanctorum.Web", "Dicta_Sanctorum.Web\Dicta_Sanctorum.Web.csproj", "{062F2B1E-4CB2-47AA-8EA9-417BF914621B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dicta_Sanctorium.Test", "Dicta_Sanctorium.Test\Dicta_Sanctorium.Test.csproj", "{0E0F7817-5B40-49AD-A77D-497CF1608BEB}"
 EndProject

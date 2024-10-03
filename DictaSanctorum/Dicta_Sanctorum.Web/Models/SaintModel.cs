@@ -12,5 +12,8 @@
         public string bio { get; set; }
         public string image { get; set; }
         public string prayer { get; set; }
+
+
+        public ICollection<PhraseModel> Phrases { get; set; }
     }
 }
