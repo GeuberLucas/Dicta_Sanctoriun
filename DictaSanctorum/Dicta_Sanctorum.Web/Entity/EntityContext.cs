@@ -10,12 +10,9 @@ namespace Dicta_Sanctorum.Entity
         public DbSet<PhraseModel> Phrases { get; set; }
         public string DbPath { get; }
 
-        public EntityContext(DbContextOptions<EntityContext> options):base(options)
+        public EntityContext()
         {
-            var folder = Environment.Sp
-            var path = Environment.GetFolderPath(folder);
-            Console.WriteLine(path);
-            DbPath = Path.Join(path,$"dicta_sanctorum.db");
+            
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)

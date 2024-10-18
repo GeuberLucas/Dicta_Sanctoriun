@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Dicta_Sanctorum.Entity;
+using Dicta_Sanctorum.Models;
+using Dicta_Sanctorum.Repository;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Dicta_Sanctorum.Controllers
 {
     public class SaintController : Controller
     {
+        
         public SaintController()
         {
             
@@ -12,33 +16,46 @@ namespace Dicta_Sanctorum.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
+           var saints= new SaintsRepository().GetAll();
 
-
-        public IActionResult GetAll()
-        {
-
-            return View();
-        }
-
-        public IActionResult GetById(int id)
-        {
-            return View();
+            return View(saints);
         }
 
         public IActionResult Add()
         {
-            return View();
+            var saint = new SaintModel();
+            return View(saint);
         }
 
-        public IActionResult Edit() { 
-            return View();
+        [HttpPost]
+        public IActionResult Add(SaintModel saintModel)
+        {
+            new SaintsRepository().Add(saintModel);
+            return View(saintModel);
         }
 
-        public IActionResult Delete() {
-            return View();
+        public IActionResult Edit(int id) { 
+            
+            var saint = new SaintsRepository().GetById(id);
+            return View(saint);
+        }
+        [HttpPost]
+        public IActionResult Edit(SaintModel saint)
+        {
+            new SaintsRepository().Edit(saint);
+            return View(saint);
+        }
+        public IActionResult Delete(int id) {
+            
+            var saint = new SaintsRepository().GetById(id);
+            return View(saint);
         }
 
+        [HttpPost]
+        public IActionResult Delete(SaintModel saint)
+        {
+            new SaintsRepository().Delete(saint);
+            return View();
+        }
     }
 }
