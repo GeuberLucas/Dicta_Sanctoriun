@@ -1,12 +1,18 @@
 ﻿using Dicta_Sanctorum.Entity;
 using Dicta_Sanctorum.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
 
 namespace Dicta_Sanctorum.Repository
 {
     public class PhraseRepository
     {
+
         //Crud
-        public PhraseRepository() { }
+        public PhraseRepository()
+        {
+            
+        }
 
         public void Add(PhraseModel phrase)
         {

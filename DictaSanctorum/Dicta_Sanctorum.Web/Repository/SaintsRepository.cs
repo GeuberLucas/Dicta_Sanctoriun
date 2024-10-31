@@ -1,12 +1,17 @@
 ﻿using Dicta_Sanctorum.Entity;
 using Dicta_Sanctorum.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dicta_Sanctorum.Repository
 {
     public class SaintsRepository
     {
 
-        public SaintsRepository() { }
+        public SaintsRepository()
+        {
+           
+            
+        }
 
         public void Add(SaintModel saint)
         {

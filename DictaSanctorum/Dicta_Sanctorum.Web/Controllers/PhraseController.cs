@@ -2,14 +2,17 @@
 using Dicta_Sanctorum.Models;
 using Dicta_Sanctorum.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dicta_Sanctorum.Controllers
 {
     public class PhraseController : Controller
     {
-        public PhraseController()
+        public DbContextOptions<EntityContext> _options { get; }
+
+        public PhraseController(DbContextOptions<EntityContext> options)
         {
-            
+            _options = options;
         }
 
         public IActionResult Index()

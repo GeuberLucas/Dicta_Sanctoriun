@@ -1,23 +1,26 @@
 ﻿using Dicta_Sanctorum.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Reflection.Metadata;
 
 namespace Dicta_Sanctorum.Entity
 {
     public class EntityContext:DbContext
     {
+
         public DbSet<SaintModel> Saints { get; set; }
         public DbSet<PhraseModel> Phrases { get; set; }
-        public string DbPath { get; }
 
         public EntityContext()
         {
             
         }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-        => options.UseSqlite($"Data Source={DbPath}");
-
+        public EntityContext(DbContextOptions<EntityContext> options): base(options)
+        { }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseMySQL("server=localhost;port=3306;database=dicta_sanctorum;uid=root;pwd=1234");
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

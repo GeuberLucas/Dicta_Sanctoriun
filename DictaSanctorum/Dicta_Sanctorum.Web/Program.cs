@@ -1,4 +1,6 @@
 using Dicta_Sanctorum.Entity;
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 

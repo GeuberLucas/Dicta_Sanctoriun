@@ -1,0 +1,78 @@
+﻿@model Dicta_Sanctorum.Models.SaintModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>SaintModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="id" class="control-label"></label>
+                <input asp-for="id" class="form-control" />
+                <span asp-validation-for="id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="feastDay" class="control-label"></label>
+                <input asp-for="feastDay" class="form-control" />
+                <span asp-validation-for="feastDay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="birthYear" class="control-label"></label>
+                <input asp-for="birthYear" class="form-control" />
+                <span asp-validation-for="birthYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="deathYear" class="control-label"></label>
+                <input asp-for="deathYear" class="form-control" />
+                <span asp-validation-for="deathYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="canonizationYear" class="control-label"></label>
+                <input asp-for="canonizationYear" class="form-control" />
+                <span asp-validation-for="canonizationYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nationality" class="control-label"></label>
+                <input asp-for="nationality" class="form-control" />
+                <span asp-validation-for="nationality" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="bio" class="control-label"></label>
+                <input asp-for="bio" class="form-control" />
+                <span asp-validation-for="bio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="image" class="control-label"></label>
+                <input asp-for="image" class="form-control" />
+                <span asp-validation-for="image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="prayer" class="control-label"></label>
+                <input asp-for="prayer" class="form-control" />
+                <span asp-validation-for="prayer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

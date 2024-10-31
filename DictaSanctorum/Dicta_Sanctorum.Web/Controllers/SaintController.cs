@@ -2,15 +2,15 @@
 using Dicta_Sanctorum.Models;
 using Dicta_Sanctorum.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dicta_Sanctorum.Controllers
 {
     public class SaintController : Controller
     {
-        
-        public SaintController()
+
+        public SaintController(DbContextOptions<EntityContext> options)
         {
-            
         }
 
 

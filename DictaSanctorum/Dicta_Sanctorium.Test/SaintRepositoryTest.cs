@@ -1,5 +1,6 @@
 ﻿using Dicta_Sanctorum.Models;
 using Dicta_Sanctorum.Repository;
+using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,12 @@ namespace Dicta_Sanctorium.Test
     public class SaintRepositoryTest
     {
         SaintsRepository _saintsRepository;
+        IConfiguration _configuration;
 
         [SetUp]
         public void Setup()
         {
-            _saintsRepository = new SaintsRepository();
+            _saintsRepository = new SaintsRepository(_configuration);
         }
 
         [Test]
