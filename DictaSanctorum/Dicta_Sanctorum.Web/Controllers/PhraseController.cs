@@ -1,6 +1,6 @@
-﻿using Dicta_Sanctorum.Entity;
+﻿using Dicta_Sanctorum.Data.InterfacesRepository;
+using Dicta_Sanctorum.Entity;
 using Dicta_Sanctorum.Models;
-using Dicta_Sanctorum.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,16 +8,16 @@ namespace Dicta_Sanctorum.Controllers
 {
     public class PhraseController : Controller
     {
-        public DbContextOptions<EntityContext> _options { get; }
+        private readonly IPhraseRepository _phraseRepository;
 
-        public PhraseController(DbContextOptions<EntityContext> options)
+        public PhraseController(IPhraseRepository phraseRepository)
         {
-            _options = options;
+            _phraseRepository = phraseRepository;
         }
 
         public IActionResult Index()
         {
-            var phrases= new PhraseRepository().GetAll();
+            var phrases= _phraseRepository.GetAll();
 
             return View(phrases);
         }
@@ -28,36 +28,37 @@ namespace Dicta_Sanctorum.Controllers
             return View(phrase);
         }
 
+        [HttpPost]
         public IActionResult Add(PhraseModel phraseModel)
         {
-            new PhraseRepository().Add(phraseModel);
-            return View(phraseModel);
+            _phraseRepository.Add(phraseModel);
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Edit(int id)
         {
 
-            var phrase = new PhraseRepository().GetById(id);
+            var phrase = _phraseRepository.GetById(id);
             return View(phrase);
         }
 
         [HttpPost]
         public IActionResult Edit(PhraseModel phrase)
         {
-           new PhraseRepository().Edit(phrase);
+           _phraseRepository.Edit(phrase);
             return View(phrase);
         }
 
 
         public IActionResult Delete(int id)
         {
-            var phrase = new PhraseRepository().GetById(id);
+            var phrase = _phraseRepository.GetById(id);
             return View(phrase);
         }
 
         public IActionResult Delete(PhraseModel phrase)
         {
-            new PhraseRepository().Delete(phrase);
+            _phraseRepository.Delete(phrase);
             return View();
         }
     }

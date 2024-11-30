@@ -1,5 +1,5 @@
-﻿using Dicta_Sanctorum.Models;
-using Dicta_Sanctorum.Repository;
+﻿using Dicta_Sanctorum.Data.Repository;
+using Dicta_Sanctorum.Models;
 using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 using System;

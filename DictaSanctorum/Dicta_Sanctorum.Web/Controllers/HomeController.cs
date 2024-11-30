@@ -1,3 +1,4 @@
+using Dicta_Sanctorum.Data.InterfacesRepository;
 using Dicta_Sanctorum.Models;
 using Dicta_Sanctorum.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -8,15 +9,24 @@ namespace Dicta_Sanctorum.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IPhraseRepository _phraseRepository;
+        private readonly ISaintRepository _saintRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,IPhraseRepository phraseRepository,ISaintRepository saintRepository)
         {
             _logger = logger;
+            _phraseRepository = phraseRepository;
+            _saintRepository = saintRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var viewModel = new HomeViewModel();
+            var phraseModel = _phraseRepository.GetRandomPhrase();
+            var saintModel = _saintRepository.GetById(phraseModel.idSaint);
+            viewModel.phrase = phraseModel.phrase;
+            viewModel.SaintName = saintModel.name;
+            return View(viewModel);
         }
 
         public IActionResult Privacy()

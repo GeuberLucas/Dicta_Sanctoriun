@@ -1,3 +1,4 @@
+using Dicta_Sanctorum;
 using Dicta_Sanctorum.Entity;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<EntityContext>();
+builder.Services.AddInjections();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
