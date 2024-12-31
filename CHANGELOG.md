@@ -8,7 +8,7 @@ Este projeto também utiliza o padrão de versionamento [SemVer](https://semver.
 ## [Unreleased]
 - Adicionar yaml para deploy automático
 
-## [0.1.0] - yyyy-mm-dd
+## [0.0.0] - yyyy-mm-dd
 ### Adicionado
 - Inicialização do projeto com README.
 - Adicionado arquivo de changelog.
