@@ -1,0 +1,6 @@
+@Dicta_Sanctorum.APi_HostAddress = http://localhost:5050
+
+GET {{Dicta_Sanctorum.APi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
