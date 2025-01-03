@@ -13,7 +13,6 @@ pipeline {
                 } else {
                     bat 'dotnet build'
                 }
-                
             }
         }
         stage('Test') {
