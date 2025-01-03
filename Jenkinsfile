@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'master', url: 'https://github.com/GeuberLucas/Dicta_Sanctoriun.git'
-            }
-        }
         stage('Build') {
             steps {
                     bat 'dotnet build'
@@ -15,6 +10,7 @@ pipeline {
         stage('Test') {
             steps {
                 bat 'dotnet test'
+                bat 'npm install --prefix Dicta-Sanctorum-Front'
                 bat 'npm run test --prefix Dicta-Sanctorum-Front'
             }
         }
