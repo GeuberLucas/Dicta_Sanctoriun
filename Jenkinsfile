@@ -8,11 +8,9 @@ pipeline {
         }
         stage('Build') {
             steps {
-                if (isUnix()) {
-                    sh 'dotnet build '
-                } else {
+                
                     bat 'dotnet build'
-                }
+            
             }
         }
         stage('Test') {
