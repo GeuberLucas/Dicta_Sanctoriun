@@ -4,15 +4,18 @@ pipeline {
         stage('Build') {
             steps {
                     bat 'dotnet build'
-                    bat 'npm install --prefix "${WORKSPACE}/Dicta-Sanctorum-Front/"'
-                    bat 'npm run buildprod --prefix Dicta-Sanctorum-Front'
+                    bat 'cd Dicta-Sanctorum-Front'
+                    bat 'npm install'
+                    bat 'npm run buildprod'
+                    bat 'cd ..'
             }
         }
         stage('Test') {
             steps {
                 bat 'dotnet test'
-                
+                bat 'cd Dicta-Sanctorum-Front'
                 bat 'npm run test --prefix Dicta-Sanctorum-Front'
+                bat 'cd ..'
             }
         }
         stage('Deploy') {
