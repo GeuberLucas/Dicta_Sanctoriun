@@ -15,12 +15,10 @@ pipeline {
         stage('Test') {
             steps {
                 bat 'dotnet test'
-                bat 'cd Dicta-Sanctorum-Front'
-                dir(' Dicta-Sanctorum-Front') {
+                dir('Dicta-Sanctorum-Front') {
                     bat 'npm run test'
                 }
-                bat 'npm run test --prefix Dicta-Sanctorum-Front'
-                bat 'cd ..'
+                
             }
         }
         stage('Deploy') {
