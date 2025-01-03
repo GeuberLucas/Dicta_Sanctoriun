@@ -15,7 +15,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing....'
+                bat 'dotnet test'
+                bat 'npm run test --prefix Dicta-Sanctorum-Front'
             }
         }
         stage('Deploy') {
