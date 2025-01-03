@@ -5,7 +5,7 @@ pipeline {
             steps {
                     bat 'dotnet build'
                     bat 'cd Dicta-Sanctorum-Front'
-                    dir('Frontend/Dicta-Sanctorum-Front') {
+                    dir('Dicta-Sanctorum-Front') {
                         bat 'npm install'
                         bat 'npm run buildprod'
                     }
