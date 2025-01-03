@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                     bat 'dotnet build'
-                    bat 'npm run buildprod --prefix /Dicta-Sanctorum-Front'
+                    bat 'npm run buildprod --prefix Dicta-Sanctorum-Front'
             }
         }
         stage('Test') {
