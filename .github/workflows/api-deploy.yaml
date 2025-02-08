@@ -6,9 +6,7 @@ on:
 
 jobs:
   Ci-api:
-
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,3 +20,9 @@ jobs:
           dotnet restore  Dicta-Sanctorum.APi.csproj
           dotnet build Dicta-Sanctorum.APi.csproj
         working-directory: Dicta-Sanctorum.APi
+      
+      - name: Test
+        run: dotnet test Dicta-Sanctorum.API.Tests.csproj
+
+      - name: Publish
+        run: dotnet publish Dicta-Sanctorum.APi.csproj -c Release -o ./publish -r linux-arm64 --self-contained true
