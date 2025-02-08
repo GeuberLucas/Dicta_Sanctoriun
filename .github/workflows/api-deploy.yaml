@@ -22,7 +22,9 @@ jobs:
         working-directory: Dicta-Sanctorum.APi
       
       - name: Test
-        run: dotnet test Dicta-Sanctorum.API.Tests.csproj
+        run: dotnet test Dicta-Sanctorum.API.Tests.csproj 
+        working-directory: Dicta-Sanctorum.API.Tests
 
       - name: Publish
         run: dotnet publish Dicta-Sanctorum.APi.csproj -c Release -o ./publish -r linux-arm64 --self-contained true
+        working-directory: Dicta-Sanctorum.APi
