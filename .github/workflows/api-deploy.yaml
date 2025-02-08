@@ -21,4 +21,4 @@ jobs:
         run: |
           dotnet restore  Dicta-Sanctorum.APi.csproj
           dotnet build Dicta-Sanctorum.APi.csproj
-        working-directory: Dicta-Sanctorum.API
+        working-directory: Dicta-Sanctorum.APi
