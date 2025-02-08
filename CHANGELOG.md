@@ -12,4 +12,6 @@ Este projeto também utiliza o padrão de versionamento [SemVer](https://semver.
 ### Adicionado
 - Inicialização do projeto com README.
 - Adicionado arquivo de changelog.
+- Adicionado arquivos de teste e2e
+- Adicionadas regras de eslint
 

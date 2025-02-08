@@ -3,7 +3,38 @@
 Uma Lembrança diaria de que a santidade é possivel e alcançável
 
 
+## Estrutura de Pastas
 
+```filetree
+Dicta-Sanctorum
+└── Dicta-Sanctorum
+|   ├── backend
+|       ├── Controllers
+|       ├── Models
+|       ├── Repositories
+|       ├── Services
+|       ├── Program.cs
+|       ├── Startup.cs
+|       └── appsettings.json
+|   ├── frontend
+|       ├── src
+|           ├── app
+|               ├── components
+|               ├── services
+|               ├── models
+|               └── app.module.ts
+|           ├── assets
+|           ├── environments
+|           ├── index.html
+|           ├── main.ts
+|           └── styles.scss
+|       ├── angular.json
+|       ├── package.js
+|       ├── tsconfig.app.json
+|       ├── tsconfig.json
+|       └── tsconfig.spec.json
+|   ├── CHANGELOG.md
+|   └── README.md
 
 ## Funcionalidades
 ### MVP
