@@ -6,7 +6,6 @@ on:
 
 jobs:
   Ci-api:
-    env:
 
     runs-on: ubuntu-latest
 
