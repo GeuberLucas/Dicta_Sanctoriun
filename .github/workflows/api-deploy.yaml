@@ -6,6 +6,8 @@ on:
 
 jobs:
   Ci-api:
+    env:
+
     runs-on: ubuntu-latest
 
     steps:
@@ -18,5 +20,6 @@ jobs:
 
       - name: Restore and Build
         run: |
-          dotnet restore
-          dotnet build
+          dotnet restore  Dicta-Sanctorum.APi.csproj
+          dotnet build Dicta-Sanctorum.APi.csproj
+        working-directory: ./Dicta-Sanctorum.API
