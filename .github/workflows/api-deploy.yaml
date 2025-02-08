@@ -22,12 +22,17 @@ jobs:
         working-directory: Dicta-Sanctorum.APi
       
       - name: Test
-        run: dotnet test Dicta-Sanctorum.API.Tests.csproj ${{secrets.TEST_PARAMS}}
+        run: dotnet test Dicta-Sanctorum.API.Tests.csproj 
         working-directory: Dicta-Sanctorum.API.Tests
 
       - name: Publish
         run: dotnet publish Dicta-Sanctorum.APi.csproj -c Release -o ./publish -r linux-arm64 --self-contained true
         working-directory: Dicta-Sanctorum.APi
       
-      - name: Deploy
+      - name: setup aws cli 
+        run: |
+            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            unzip awscliv2.zip
+            sudo ./aws/install
+            aws --version
         
