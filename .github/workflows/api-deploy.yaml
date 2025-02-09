@@ -29,7 +29,17 @@ jobs:
         run: dotnet publish Dicta-Sanctorum.APi.csproj -c Release -o ./publish -r linux-arm64 --self-contained true
         working-directory: Dicta-Sanctorum.APi
       
-      - name: setup aws cli 
-        run: |
-            aws --version
+      - name: Deploy
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rlgoDzvc -i --delete"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
+          SOURCE: './Dicta-Sanctorum.APi/publish/'
+          REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
+      
+
+      
         
