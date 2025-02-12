@@ -26,7 +26,7 @@ jobs:
         working-directory: Dicta-Sanctorum.API.Tests
 
   CD:
-    depends-on: CI
+    needs: CI
     runs-on: ubuntu-latest
     steps:
       - name: Publish
