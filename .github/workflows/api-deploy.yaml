@@ -39,6 +39,11 @@ jobs:
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           SOURCE: './Dicta-Sanctorum.APi/publish/'
           TARGET: ${{ secrets.REMOTE_TARGET }}
+          SCRIPT_BEFORE: |
+            sudo systemctl stop dictasanctorumapi.service
+            sudo rm -rf /var/www/api/*
+          SCRIPT_AFTER: |
+            sudo systemctl start dictasanctorumapi.service
 
   
       
