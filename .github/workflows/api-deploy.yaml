@@ -25,9 +25,8 @@ jobs:
         run: dotnet test Dicta-Sanctorum.API.Tests.csproj 
         working-directory: Dicta-Sanctorum.API.Tests
 
-      
-  
   CD:
+    depends-on: CI
     runs-on: ubuntu-latest
     steps:
       - name: Publish
