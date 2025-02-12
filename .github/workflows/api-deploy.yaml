@@ -38,7 +38,7 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           SOURCE: './Dicta-Sanctorum.APi/publish/'
-          REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
+          TARGET: ${{ secrets.REMOTE_TARGET }}
       
 
       
