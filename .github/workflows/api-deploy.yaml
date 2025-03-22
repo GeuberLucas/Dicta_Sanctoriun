@@ -17,10 +17,9 @@ jobs:
 
       - name: Restore and Build
         run: |
-          dotnet restore  Dicta-Sanctorum.Api.csproj
-          dotnet build Dicta-Sanctorum.Api.csproj
-        working-directory: Dicta-Sanctorum.Api
-      
+          dotnet restore Dicta-Sactorum.Api.sln
+          dotnet build Dicta-Sactorum.Api.sln
+
       - name: Test
         run: dotnet test Dicta-Sanctorum.API.Tests.csproj 
         working-directory: Dicta-Sanctorum.API.Tests
