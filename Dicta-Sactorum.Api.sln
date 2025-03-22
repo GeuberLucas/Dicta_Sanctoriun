@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dicta-Sanctorum.API", "Dicta-Sanctorum.API\Dicta-Sanctorum.API.csproj", "{C6285650-C1FF-4FCE-87D0-B808002CBA9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dicta-Sanctorum.Api", "Dicta-Sanctorum.API\Dicta-Sanctorum.Api.csproj", "{C6285650-C1FF-4FCE-87D0-B808002CBA9B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dicta-Sanctorum.API.Tests", "Dicta-Sanctorum.API.Tests\Dicta-Sanctorum.API.Tests.csproj", "{AA112E3D-357C-4AD0-9304-492C66E01377}"
 EndProject
