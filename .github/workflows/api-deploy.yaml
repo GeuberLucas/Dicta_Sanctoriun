@@ -17,16 +17,16 @@ jobs:
 
       - name: Restore and Build
         run: |
-          dotnet restore  Dicta-Sanctorum.APi.csproj
-          dotnet build Dicta-Sanctorum.APi.csproj
-        working-directory: Dicta-Sanctorum.APi
+          dotnet restore  Dicta-Sanctorum.Api.csproj
+          dotnet build Dicta-Sanctorum.Api.csproj
+        working-directory: Dicta-Sanctorum.Api
       
       - name: Test
         run: dotnet test Dicta-Sanctorum.API.Tests.csproj 
         working-directory: Dicta-Sanctorum.API.Tests
 
       - name: Publish
-        run: dotnet publish Dicta-Sanctorum.APi.csproj -c Release -o ./publish -r linux-arm64 --self-contained true
+        run: dotnet publish Dicta-Sanctorum.Api.csproj -c Release -o ./publish -r linux-arm64 --self-contained true
         working-directory: Dicta-Sanctorum.APi
       
       - name: Deploy
