@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Dicta-Sanctorum.API\Dicta-Sanctorum.Api.csproj" />
+    <ProjectReference Include="..\Dicta-Sanctorum.Api\Dicta-Sanctorum.Api.csproj" />
   </ItemGroup>
 
   <ItemGroup>
